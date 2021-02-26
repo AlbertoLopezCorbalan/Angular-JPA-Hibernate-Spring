@@ -1,0 +1,24 @@
+
+  
+  <div class="card my-5">
+    <div class="card-body">
+      <table class="styled-table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Motivo</th>
+            <th scope="col">Medico</th>
+            <th scope="col">Paciente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of citas">
+            <td>{{cita.fechaHora}}</td>
+            <td>{{cita.motivoCita}}</td>
+            <td>{{cita.medico.nombre}} {{cita.medico.apellidos}}</td>
+            <td>{{cita.paciente.nombre}} {{cita.paciente.apellidos}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

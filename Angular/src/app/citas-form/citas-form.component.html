@@ -1,0 +1,77 @@
+<form  (ngSubmit)="onSubmit()" #citaForm="ngForm" id="login-form" class="login-form" autocomplete="off" role="main">
+  <h1 class="a11y-hidden">Login Form</h1>
+  
+  <!-- Fecha -->
+  <div>
+    <label class="label-Fecha">
+      <input type="datetime-local" class="date" name="Fecha" placeholder="Fecha" tabindex="1" required [(ngModel)]="cita.fechaHora" />
+      <span class="required">Fecha</span>
+    </label>
+  <!-- Motivo -->  
+    <label class="label-Motivo">
+      <input type="text" class="text" name="Motivo" placeholder="Motivo" tabindex="2" required  [(ngModel)]="cita.motivoCita"/>
+      <span class="required">Motivo</span>
+    </label>
+  </div>
+
+  <!-- Medicos -->
+  <div>
+    <label class="label-Medicos">
+      <span class="required">Médico</span>
+    </label>
+  </div>
+
+  <div class="padding"></div>
+
+  <div>
+    <label class="label-Medico">
+      <select placeholder="Medico" name="Medico" id="subject_input" tabindex="3" required  [(ngModel)]="cita.medico">
+        <option *ngFor="let medico of medicos" [ngValue]="medico"> <!-- [ngValue]="paciente" implica que se queda con el Objeto del seleccionado-->
+          {{medico.nombre}} {{medico.apellidos}}
+        </option>
+      </select>
+    </label>
+  </div>
+
+
+  <!-- Pacientes -->
+  <div>
+    <label class="label-Paciente">
+      <span class="required">Paciente</span>
+    </label>
+  </div>
+
+  <div class="padding"></div>
+  
+  <div>
+    <label class="label-Paciente">
+      <select placeholder="Paciente" name="Paciente" id="subject_input"  tabindex="4" required  [(ngModel)]="cita.paciente">
+        <option *ngFor="let paciente of pacientes" [ngValue]="paciente">
+          {{paciente.nombre}} {{paciente.apellidos}}
+        </option>
+      </select>
+    </label>
+  </div>
+
+  <input type="submit" tabindex="5" value="Crear cita" />
+
+
+
+
+
+
+
+  <!-- Personaje animado -->
+  <figure aria-hidden="true">
+    <div class="person-body"></div>
+    <div class="neck skin"></div>
+    <div class="head skin">
+      <div class="eyes"></div>
+      <div class="mouth"></div>
+    </div>
+    <div class="hair"></div>
+    <div class="ears"></div>
+    <div class="shirt-1"></div>
+    <div class="shirt-2"></div>
+  </figure>
+</form>
