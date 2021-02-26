@@ -1,0 +1,18 @@
+package es.formacion.citasmedicas.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.formacion.citasmedicas.entities.Medico;
+import es.formacion.citasmedicas.repository.RepositorioDiagnostico;
+import es.formacion.citasmedicas.repository.RepositorioMedico;
+
+public class ServicioDiagnostico {
+	@Autowired
+	private RepositorioDiagnostico repositorioDiagnostico;
+	
+	public List<Medico> getMedicos(){
+		return this.repositorioDiagnostico.findAll();
+	}
+}

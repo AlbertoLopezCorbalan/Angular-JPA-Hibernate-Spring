@@ -1,0 +1,5 @@
+package es.formacion.citasmedicas.repository;
+
+public interface RepositorioUsuario {
+
+}

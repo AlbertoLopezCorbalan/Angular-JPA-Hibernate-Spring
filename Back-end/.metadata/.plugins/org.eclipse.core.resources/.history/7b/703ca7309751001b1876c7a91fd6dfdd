@@ -1,0 +1,22 @@
+package es.formacion.citasmedicas;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import es.formacion.citasmedicas.repository.RepositorioMedico;
+
+
+@SpringBootApplication
+public class CitasmedicasApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(CitasmedicasApplication.class, args);
+	}
+	
+	
+	@Autowired
+	private RepositorioMedico repositorioMedico;
+	
+
+	
+}

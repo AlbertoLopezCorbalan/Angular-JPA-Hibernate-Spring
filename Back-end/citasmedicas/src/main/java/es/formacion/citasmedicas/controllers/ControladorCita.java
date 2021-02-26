@@ -1,0 +1,75 @@
+package es.formacion.citasmedicas.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.formacion.citasmedicas.entities.Cita;
+import es.formacion.citasmedicas.entities.Diagnostico;
+import es.formacion.citasmedicas.services.ServicioCita;
+import es.formacion.citasmedicas.services.ServicioDiagnostico;
+import es.formacion.citasmedicas.services.ServicioMedico;
+import es.formacion.citasmedicas.services.ServicioPaciente;
+
+
+@CrossOrigin(origins="http://localhost:4200")
+@RestController
+@RequestMapping("citas")
+public class ControladorCita {
+		
+		@Autowired
+		ServicioCita citas;
+		@Autowired
+		ServicioDiagnostico diagnosticos;
+		@Autowired
+		ServicioMedico servicioMedico;
+		@Autowired
+		ServicioPaciente servicioPaciente;
+		
+
+		// Servicio GET
+		
+		@GetMapping("todas")
+		public  List<Cita> getCitas(){
+			return this.citas.getCitas();
+		}
+		
+		@GetMapping("diagnosticos")
+		public List<Diagnostico> getDiagnosticos(){
+			return this.diagnosticos.getDiagnosticos();
+		}
+		
+		// Servicio POST
+		
+		@PostMapping("/diagnostico")
+	    public void saveUsuario(@RequestBody Diagnostico diagnostico) {
+			diagnosticos.saveDiagnostico(diagnostico);
+	    }
+		
+		@PostMapping("/cita")
+		public void saveCita(@RequestBody Cita cita) {
+			
+			if (cita.getMedico() == null || 
+					cita.getPaciente() == null || 
+						cita.getFechaHora() == null) return; // Comprobar que todo viene correctamente ***
+			
+			
+			// Los que deben de estar
+			cita.setMedico(servicioMedico.getMedico(cita.getMedico())); // Se usa el de la base de datos para las fk
+			cita.setPaciente(servicioPaciente.getPaciente(cita.getPaciente()));	// Se usa el de la base de datos para las fk
+			
+			// El diagnostico no tiene porque estar creado, aunque cuando se crea auna cita es vacía y sin diagnostico
+			Diagnostico diagnostico = diagnosticos.getDiagnostico(cita.getDiagnostico());
+			if (diagnostico != null) cita.setDiagnostico(diagnostico); // Se usa el de la base de datos para las fk	
+			
+			citas.saveCita(cita);
+	    }
+		
+
+}

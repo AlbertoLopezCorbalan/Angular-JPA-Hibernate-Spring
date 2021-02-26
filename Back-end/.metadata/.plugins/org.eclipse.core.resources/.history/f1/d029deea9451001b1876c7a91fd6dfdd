@@ -1,0 +1,22 @@
+package es.formacion.citasmedicas.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.formacion.citasmedicas.services.ServicioUsuario;
+
+@RestController
+@RequestMapping("users")
+public class ControladorUsuario {
+	
+	ServicioUsuario usuarios;
+
+	@GetMapping("all")
+	public  List<Usuario> getUsuarios(){
+		this.usuarios
+	}
+
+}

@@ -1,0 +1,5 @@
+package es.formacion.citasmedicas.services;
+
+public interface IServicioCita {
+
+}

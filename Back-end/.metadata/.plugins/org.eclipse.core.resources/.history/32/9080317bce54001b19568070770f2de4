@@ -1,0 +1,53 @@
+package es.formacion.citasmedicas.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@SuppressWarnings("serial")
+
+@Entity
+@Table(name = "Diagnostico")
+public class Diagnostico implements Serializable {
+
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	private int id;
+	
+	@Column(name = "valoracionEspecialista")
+	private String valoracionEspecialista;
+	
+	@Column(name = "enfermedad")
+	private String enfermedad;
+		
+	
+	
+	public Diagnostico() { // Para JPA
+		
+	}
+
+	
+	public Diagnostico(String valoracionEspecialista, String enfermedad, Cita cita) {
+		this.valoracionEspecialista = valoracionEspecialista;
+		this.enfermedad = enfermedad;
+	}
+	
+	public String getValoracionEspecialista() {
+		return valoracionEspecialista;
+	}
+	public void setValoracionEspecialista(String valoracionEspecialista) {
+		this.valoracionEspecialista = valoracionEspecialista;
+	}
+	public String getEnfermedad() {
+		return enfermedad;
+	}
+	public void setEnfermedad(String enfermedad) {
+		this.enfermedad = enfermedad;
+	}
+
+	@Override
+	public String toString() {
+		return "Diagnostico [valoracionEspecialista=" + valoracionEspecialista + ", enfermedad=" + enfermedad +"]";
+	}
+}

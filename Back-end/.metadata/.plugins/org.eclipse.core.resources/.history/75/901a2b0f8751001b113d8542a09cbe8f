@@ -1,0 +1,6 @@
+connection.driver_class=oracle.jdbc.OracleDriver
+connection.url=jdbc:oracle:thin:@localhost:1521:citasMedicasLocal
+connection.username=SYSTEM
+connection.password=87654321
+dialect=org.hibernate.dialect.Oracle8iDialect
+spring.jpa.database-platform=org.hibernate.dialect.Oracle8iDialect

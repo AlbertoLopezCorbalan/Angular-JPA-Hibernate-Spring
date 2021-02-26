@@ -1,0 +1,36 @@
+package es.formacion.citasmedicas.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.formacion.citasmedicas.services.ServicioMedico;
+import es.formacion.citasmedicas.services.ServicioPaciente;
+import es.formacion.citasmedicas.services.ServicioUsuario;
+
+@RestController
+@RequestMapping("users")
+public class ControladorUsuario {
+	
+	ServicioUsuario usuarios = ServicioUsuario.getInstancia();
+	ServicioPaciente pacientes = ServicioPaciente.getunicaInstancia();
+	ServicioMedico medicos = ServicioMedico.getunicaInstancia();
+
+	@GetMapping("all")
+	public  List<Usuario> getUsuarios(){
+		this.usuarios
+	}
+	
+	@GetMapping("pacientes")
+	public  List<Usuario> getUsuarios(){
+		this.usuarios
+	}
+	
+	@GetMapping("medicos")
+	public  List<Usuario> getUsuarios(){
+		this.usuarios
+	}
+
+}

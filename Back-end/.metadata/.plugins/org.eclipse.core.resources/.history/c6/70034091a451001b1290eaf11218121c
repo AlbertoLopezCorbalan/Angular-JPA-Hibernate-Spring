@@ -1,0 +1,17 @@
+package es.formacion.citasmedicas.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.formacion.citasmedicas.entities.Cita;
+import es.formacion.citasmedicas.repository.RepositorioCita;
+
+public class ServicioCita {
+	@Autowired
+	private RepositorioCita repositorioCitas;
+	
+	public List<Cita> getCitas(){
+		return this.repositorioCitas.findAll();
+	}
+}

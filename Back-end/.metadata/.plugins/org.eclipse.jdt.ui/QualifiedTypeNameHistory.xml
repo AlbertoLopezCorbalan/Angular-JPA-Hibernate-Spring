@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.repository.RepositorioUsuario"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.services.ServicioUsuario"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.entities.Usuario"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.repository.RepositorioMedico"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.entities.Medico"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.repository.RepositorioPaciente"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.entities.Paciente"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.repository.RepositorioDiagnostico"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.repository.RepositorioCita"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.services.ServicioCita"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.services.ServicioDiagnostico"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.entities.Cita"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.entities.Diagnostico"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.services.ServicioMedico"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter"/>
+    <fullyQualifiedTypeName name="es.formacion.citasmedicas.services.ServicioPaciente"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonBackReference"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
+</qualifiedTypeNameHistroy>

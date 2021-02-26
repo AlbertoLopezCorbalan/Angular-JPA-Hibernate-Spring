@@ -1,0 +1,13 @@
+package es.formacion.citasmedicas.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import es.formacion.citasmedicas.entities.Cita;
+
+public interface RepositorioCita extends JpaRepository<Cita, Integer>{
+
+	
+	
+	
+	
+}

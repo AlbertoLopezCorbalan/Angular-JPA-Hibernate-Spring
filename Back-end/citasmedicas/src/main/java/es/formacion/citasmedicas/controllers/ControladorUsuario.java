@@ -1,0 +1,61 @@
+package es.formacion.citasmedicas.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.formacion.citasmedicas.entities.Medico;
+import es.formacion.citasmedicas.entities.Paciente;
+import es.formacion.citasmedicas.entities.Usuario;
+import es.formacion.citasmedicas.services.ServicioMedico;
+import es.formacion.citasmedicas.services.ServicioPaciente;
+import es.formacion.citasmedicas.services.ServicioUsuario;
+
+@CrossOrigin(origins="http://localhost:4200")
+@RestController
+@RequestMapping("usuarios")
+public class ControladorUsuario {
+	
+	@Autowired
+	ServicioUsuario usuarios;
+	@Autowired
+	ServicioPaciente pacientes;
+	@Autowired
+	ServicioMedico medicos;
+
+	
+	// GET
+	
+	@GetMapping("todos")
+	public  List<Usuario> getUsuarios(){
+		return this.usuarios.getUsuarios();
+	}
+	
+	@GetMapping("pacientes")
+	public List<Paciente> getPacientes(){
+		return this.pacientes.getPacientes();
+	}
+	
+	@GetMapping("medicos")
+	public  List<Medico> getMedicos(){
+		return this.medicos.getMedicos();
+	}
+	
+	// POST
+
+	
+	@PostMapping("/paciente")
+	public void savePaciente(@RequestBody Paciente paciente) {
+		pacientes.savePaciente(paciente);
+    }
+	
+	
+	
+	
+}

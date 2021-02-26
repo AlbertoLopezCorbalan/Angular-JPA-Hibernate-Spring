@@ -1,0 +1,32 @@
+package es.formacion.citasmedicas.services;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.formacion.citasmedicas.entities.Usuario;
+import es.formacion.citasmedicas.repository.RepositorioUsuario;
+
+public class ServicioUsuario {
+	
+	private static ServicioUsuario unicaInstancia; // Se implementa como un Singleton
+	
+	@Autowired
+	private RepositorioUsuario respositorioUsuario;
+	
+	public static ServicioUsuario getInstancia(){
+		if (unicaInstancia == null)
+			try {
+				unicaInstancia = (ServicioUsuario) Class.forName(tipo).getDeclaredConstructor().newInstance();
+			} catch (Exception e) {
+				System.out.println("Error al iniciar un servicio de persistencia");
+				e.printStackTrace();
+			}
+		return unicaInstancia;
+	} 
+	
+	public List<Usuario> getUsuarios(){
+		return	this.respositorioUsuario.findAll();
+	}
+}

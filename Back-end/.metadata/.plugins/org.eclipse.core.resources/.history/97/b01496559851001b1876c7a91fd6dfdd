@@ -1,0 +1,32 @@
+package es.formacion.citasmedicas;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import es.formacion.citasmedicas.entities.Medico;
+import es.formacion.citasmedicas.repository.RepositorioMedico;
+
+
+@SpringBootApplication
+public class CitasmedicasApplication  implements CommandLineRunner{
+	public static void main(String[] args) {
+		SpringApplication.run(CitasmedicasApplication.class, args);
+	}
+	
+	
+	
+	
+	@Autowired
+	private RepositorioMedico repositorioMedico;
+	@Autowired
+	private RepositorioPaciente repositorioPaciente;
+
+	
+	@Override
+	public void run (String ... args) throws Exception {
+		this.repositorioMedico.save(new Medico("Gregorio", "Marañón y Posadillo", "Gregorio.M", "29684", 64781847));
+		this.repositorioMedico.save(new Medico("Mariano", "De Prado Serrano", "Marino.Prado", "6543", 123456789));
+	}
+}

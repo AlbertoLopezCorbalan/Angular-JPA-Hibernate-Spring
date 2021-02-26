@@ -1,0 +1,19 @@
+package es.formacion.citasmedicas.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.formacion.citasmedicas.entities.Usuario;
+import es.formacion.citasmedicas.repository.RepositorioUsuario;
+
+public class ServicioUsuario {
+
+	@Autowired
+	private RepositorioUsuario respositorioUsuario;
+	
+	public List<Usuario> getUsuarios(){
+		return	this.respositorioUsuario.findAll();
+	}
+	
+}

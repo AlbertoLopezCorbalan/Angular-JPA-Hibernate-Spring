@@ -1,0 +1,26 @@
+package es.formacion.citasmedicas.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.formacion.citasmedicas.entities.Usuario;
+import es.formacion.citasmedicas.repository.RepositorioPaciente;
+import es.formacion.citasmedicas.repository.RepositorioUsuario;
+
+
+public class ServicioPaciente {
+	
+	private static ServicioPaciente unicaInstancia = new ServicioPaciente();
+	
+	@Autowired
+	private RepositorioPaciente repositorioPaciente;
+	
+	public static ServicioPaciente getunicaInstancia() { // Declarado como Singleton
+		return unicaInstancia;
+	}
+	
+	public List<Paciente> getUsuarios(){
+		return	this.repositorioPaciente.findAll();
+	}
+}

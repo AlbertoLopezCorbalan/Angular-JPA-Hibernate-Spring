@@ -1,0 +1,9 @@
+# OracleDB connection settings
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xepdb1
+spring.datasource.username=SYSTEM
+spring.datasource.password=87654321
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+# JPA settings
+spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+spring.jpa.hibernate.ddl-auto=none

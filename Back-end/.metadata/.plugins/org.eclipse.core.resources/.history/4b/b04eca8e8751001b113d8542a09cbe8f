@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>     
+  <session-factory>
+    <property name="connection.driver_class">com.oracle.database.jdbc</property>
+    <property name="connection.url">jdbc:oracle:thin:@localhost:1521:citasMedicasLocal</property>
+    <property name="connection.username">SYSTEM</property>
+    <property name="connection.password">87654321</property>
+    <property name="dialect">org.hibernate.dialect.Oracle8iDialect</property>         
+
+
+    <mapping class="es.formacion.citasmedicas.repository" />
+    <mapping class="es.formacion.citasmedicas.entities" />
+    
+  </session-factory>
+</hibernate-configuration>

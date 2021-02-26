@@ -1,0 +1,32 @@
+package es.formacion.citasmedicas.services;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.formacion.citasmedicas.entities.Usuario;
+import es.formacion.citasmedicas.repository.RepositorioUsuario;
+
+@RestController
+public class ServicioUsuario {
+	
+	@Autowired
+	private RepositorioUsuario respositorioUsuario;
+	
+	private static ServicioUsuario unicaInstancia = new ServicioUsuario();
+		
+	public static ServicioUsuario getunicaInstancia() { // Declarado como Singleton
+		return unicaInstancia;
+	}
+	
+	public List<Usuario> getUsuarios(){
+		try {
+			return	this.respositorioUsuario.findAll();
+		} catch(java.lang.NullPointerException e) {
+			return new LinkedList<Usuario>(); // En el caso de que esté vacío
+		}
+	}
+}

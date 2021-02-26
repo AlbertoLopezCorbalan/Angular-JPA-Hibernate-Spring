@@ -1,0 +1,79 @@
+package es.formacion.citasmedicas;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import es.formacion.citasmedicas.entities.*;
+
+@SpringBootApplication
+public class CitasmedicasApplication {
+
+	public static void main(String[] args) {
+		
+				
+		
+		/*final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure() // configures settings from hibernate.cfg.xml
+                .build();
+        try {
+            SessionFactory factory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+            Session session = factory.openSession();
+            Transaction transaction = session.beginTransaction();
+             
+    		Usuario medicoPedro = new Medico("Pedro Luis", "Ripoll Pérez", "Pedro.Luis", "1234",123456789);
+    		
+    		Usuario pacienteAlberto = new Paciente("Alberto", "Gómez Serrano", "Alberto.G", "123456",
+    												"4395871", "1","968456585", "Calle Pintor Amela Costa");
+    		
+    		// Al principio la cita no tiene diagnostico
+    		Cita cita = new Cita(new java.util.Date(), "Torsión en la rodilla",
+    							 	new Diagnostico(), (Medico) medicoPedro, (Paciente) pacienteAlberto ); 
+    			
+    		Diagnostico diagnostico = new Diagnostico("Rótula y ligamentos correctamente","Esguince Grado I", cita);	
+             
+            session.save((Medico)medicoPedro);
+             
+            transaction.commit();
+             
+            session.close();
+            factory.close();
+            
+        } catch (Exception ex) {
+            StandardServiceRegistryBuilder.destroy(registry);
+            System.out.println("Casca");
+        }*/
+		
+		
+        
+        private Logger logger = LoggerFactory.getLogger(this.getClass());
+        
+        @Autowired
+        EmployeeRepository repository;
+         
+        public static void main(String[] args) {
+            SpringApplication.run(SpringBoot2DemoApplication.class, args);
+        }
+     
+        @Override
+        public void run(String... args) throws Exception 
+        {       
+            Optional<EmployeeEntity> emp = repository.findById(2L);
+     
+            logger.info("Employee id 2 -> {}", emp.get());
+        }
+        
+        
+		
+		
+		//SpringApplication.run(CitasmedicasApplication.class, args);
+	}
+
+}
